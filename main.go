@@ -25,9 +25,9 @@ var bot *linebot.Client
 
 func main() {
 	var err error
-	bot, err = linebot.New(os.Getenv("ChannelSecret"), os.Getenv("ChannelAccessToken"))
+	bot, err = linebot.New(os.Getenv("bc06369a0aad728da84caa8f58d3bf24"), os.Getenv("wMEzS3O/rD8LTzBlXwzEa2WxjikKmBGDOTMS946mF/dNtk5O2fqY0/Vntenh/elN4aZj8mlSUjnh+IKfcus3oy8e3N0+RB6dIv1L4kmeGYVB5BNmRyD/ZHASZ/s8qChVhTAoKPBheh8wKZHzAadcsQdB04t89/1O/w1cDnyilFU="))
 	log.Println("Bot:", bot, " err:", err)
-	http.HandleFunc("/callback", callbackHandler)
+	http.HandleFunc("aci-aaa.herokuapp.com:443/callback", callbackHandler)
 	port := os.Getenv("PORT")
 	addr := fmt.Sprintf(":%s", port)
 	http.ListenAndServe(addr, nil)
